@@ -1,0 +1,239 @@
+/* ================== VARIABLES (PALETA REAL) ================== */
+:root {
+  --orange: #FF7500;
+  --beige: #CAB49F;
+  --dark: #312520;
+  --black: #0B0B0B;
+  --white: #FFFFFF;
+}
+
+/* ================== RESET ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* ================== BODY ================== */
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================== NAV ================== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.nav-menu a:hover {
+  color: var(--orange);
+}
+
+/* ================== HERO ================== */
+.hero {
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-left: 6%;
+  padding-right: 8%;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* ================== HERO CONTENT ================== */
+.hero-content {
+  max-width: 560px;
+  justify-self: start;
+}
+
+/* ================== TEXT ================== */
+/* ================== HERO TEXT ================== */
+
+.hero-content {
+  max-width: 560px;
+}
+
+/* HEY! I'M */
+.hero-intro {
+  color: var(--orange);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 0.6rem;
+}
+
+/* CAMILO PABÓN */
+.hero-title {
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.1;          
+  letter-spacing: -0.4px;   
+  margin-bottom: 0.8rem;
+  white-space: nowrap;       
+}
+
+
+.hero-title span {
+  color: var(--orange);
+}
+
+/* I'M A DEVELOPER */
+.hero-subtitle {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--beige);
+  margin-bottom: 1.8rem;
+}
+
+/* DESCRIPTION TEXT */
+.hero-text {
+  color: var(--beige);
+  opacity: 0.75;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 2.2rem;
+}
+
+/* ================== ACTIONS ================== */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--orange);
+  color: var(--black);
+  padding: 0.9rem 1.6rem;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(255, 117, 0, 0.45);
+}
+
+/* ================== SOCIAL ================== */
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--dark); /* USA LA PALETA */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--beige);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background-color: var(--orange);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* ================== AVATAR ================== */
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: -10rem;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 45px 110px rgba(0, 0, 0, 0.85));
+}
+
+/* ================== HALO ================== */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 117, 0, 0.22),
+    transparent 70%
+  );
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .hero-image {
+    justify-content: center;
+    margin-right: 0;
+    margin-top: 3rem;
+  }
+
+  .hero-image img {
+    max-width: 360px;
+  }
+
+  .hero-image::before {
+    width: 420px;
+    height: 420px;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
